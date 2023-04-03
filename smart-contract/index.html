@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Merkletree</title>
+  <script src="https://cdn.jsdelivr.net/npm/merkletreejs@latest/merkletree.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/keccak256@latest/keccak256.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  const addresses = [
+    "0x1C541e05a5A640755B3F1B2434dB4e8096b8322f",     
+    "0x1071258E2C706fFc9A32a5369d4094d11D4392Ec",            
+    "0x1071258E2C706fFc9A32a5369d4094d11D4392Ec",      
+    "0x1071258E2C706fFc9A32a5369d4094d11D4392Ec",            
+    "0x1071258E2C706fFc9A32a5369d4094d11D4392Ec"           
+                    ]
+  const leaves = addresses.map(x => keccak256(x))
+  const tree = new MerkleTree(leaves, keccak256, { sortPairs: true })
+  const buf2hex = x => '0x' + x.toString('hex')
+
+  console.log(buf2hex(tree.getRoot()))
+
+  const leaf = keccak256(address) // address from wallet using walletconnect/metamask
+  const proof = tree.getProof(leaf).map(x => buf2hex(x.data))
+
+  contract.methods.safeMint(address, proof).send({ from: address }) // will be called on click of the mint button
+</script>
+</body>
+</html>
