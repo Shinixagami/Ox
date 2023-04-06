@@ -53,6 +53,14 @@ export const Container = styled.div`
 
    animation: ${fadeUp} 7s ease;
 
+
+  @media screen and (max-width: 1105px) {
+
+    transform: scale(0.9);
+    
+  }
+  
+
   @media screen and (max-width: 768px) {
 
     transform: scale(0.7);
