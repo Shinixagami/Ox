@@ -43,10 +43,12 @@ import {
 
   Btn_Send,
   Text_Send,
-
-
+  
   Chat_Box,
-
+  Chat_TextUser,
+  Chat_ImgUser,
+  Chat_Text_Inner,
+  
 
   Text_UserName,
   Input_UserName,
@@ -154,27 +156,43 @@ const LoggedIn = () => {
 
   const sendMessage = async (e) => {
 
-    toast("Test");
-    
-    e.preventDefault();
+   
 
-    const { uid, photoURL } = auth.currentUser;
+
+    let inputBox = document.querySelector('#TheMessage').value;
+
+    if(inputBox != ""){
+
+      toast("Sending Msg");
+       e.preventDefault();
+
+    const {displayName, uid, photoURL } = auth.currentUser;
 
     await messagesRef.add({
       text: formValue,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
       uid,
-      photoURL
+      photoURL,
+      displayName
     })
 
     setFormValue('');
     dummy.current.scrollIntoView({ behavior: 'smooth' });
+      
+    } else {
+
+
+
+       toast("Your Msg Box is empty.. you silly goose");
+    }
+    
+  
   }
 
 
   //props for chat message
   function ChatMessage(props) {
-  const { text, uid, photoURL } = props.message;
+  const { text, uid, photoURL, displayName} = props.message;
 
   const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
@@ -184,8 +202,12 @@ const LoggedIn = () => {
       
       
       <Chat_Box>
-      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
-      <p>{text}</p>
+        
+      <Chat_ImgUser src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} />
+        
+      <Chat_Text_Inner>{text}</Chat_Text_Inner>
+
+      <Chat_TextUser>{displayName}</Chat_TextUser>
       </Chat_Box>
    
 
@@ -225,8 +247,8 @@ const LoggedIn = () => {
           Send
           </Text_Send>
         </Btn_Send>
-  
-        <Input_Chat value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Dont be stupid"/>
+
+        <Input_Chat  id="TheMessage" value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Dont be stupid"/>
   
 
         

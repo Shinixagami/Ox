@@ -275,13 +275,15 @@ export const Chat_TextUser = styled.div`
    
 `
 
-export const Chat_ImgUser = styled.div`
+export const Chat_ImgUser = styled.img`
 
  position: absolute;
  width: 108px;
  height: 108px;
   left:15px;
   top: 14px;
+
+  border-radius: 15px;
   
 `
 
@@ -299,6 +301,11 @@ export const Chat_Text_Inner = styled.div`
   font-size: 24px;
   line-height: 29px;
   text-align: center;
+  display:flex;
+
+  align-items: center;
+
+  justify-content:center;
 
   
 `
