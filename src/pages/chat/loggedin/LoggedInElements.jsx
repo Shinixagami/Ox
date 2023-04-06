@@ -168,6 +168,10 @@ export const Image_Cato = styled.div`
 
 export const Chat_Bg = styled.div`
 
+  overflow: scroll;
+  overflow-x: hidden;
+  
+
   position: absolute;
   width: 729px;
   height: 651px;
@@ -178,11 +182,68 @@ export const Chat_Bg = styled.div`
   border-radius: 10px;
 
 
+   &::-webkit-scrollbar {
+    width: 10px;
+
+    /* left top  - does not work*/
+    transform: translate(15px, 0px);
+
+
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: linear-gradient(0.23deg, rgba(136, 208, 249, 0.73) 4.86%, rgba(112, 201, 251, 0.81) 38.54%, rgba(69, 169, 225, 0.83) 63.8%, #0788D0 85.69%);
+    border-radius: 10px;
+
+
+  }
+  
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #28E1EC; 
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #90e3e8; 
+
+    cursor: default;
+
+
+  }
+
+
    
 `
 
 
 export const Chat_Box = styled.div`
+
+  /*   position: absolute; */
+
+  position: relative;
+
+  /* z-index: 20; */
+  width: 689px;
+  height: 165px;
+
+/*   padding: 10px;
+  margin-top: 13px; */
+  
+  left: 9px;
+  top: 3px;
+  margin-top: 9px;
+  
+  background: #51EAFF;
+  border-radius: 10px;
+
+  box-shadow: 0px 0px 10px 5px #6e8291;
+
+  
+   
+
 
 
    

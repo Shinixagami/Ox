@@ -204,6 +204,8 @@ const Chat = () => {
   } //end of Connect Wallet Function
 
 
+
+
   //GOOGLE LOGIN -------------------------
   const [userGoogle] = useAuthState (auth);
 
@@ -213,6 +215,9 @@ const Chat = () => {
   const checkLogin = () => {
 
     let count = 0;
+
+  
+    
 
     if(userGoogle){
       count++;
