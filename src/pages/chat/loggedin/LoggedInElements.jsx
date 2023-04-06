@@ -55,9 +55,16 @@ export const Container = styled.div`
 
   @media screen and (max-width: 768px) {
 
-    transform: scale(0.82);
+    transform: scale(0.7);
     
   }
+
+  @media screen and (max-width: 400px) {
+
+    transform: scale(0.4);
+    
+  }
+
 
 
   
