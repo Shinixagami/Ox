@@ -71,13 +71,13 @@ export const Container = styled.div`
 
   @media screen and (max-width: 400px) {
 
-    transform: scale(0.4);
+    transform: scale(0.41);
     
   }
 
    @media screen and (max-width: 350px) {
 
-    transform: scale(0.35);
+    transform: scale(0.36);
     
   }
 
