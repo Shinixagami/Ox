@@ -59,9 +59,25 @@ export const Container = styled.div`
     
   }
 
+
+  
+  @media screen and (max-width: 650px) {
+
+    transform: scale(0.6);
+    
+  }
+
+  
+
   @media screen and (max-width: 400px) {
 
     transform: scale(0.4);
+    
+  }
+
+   @media screen and (max-width: 350px) {
+
+    transform: scale(0.35);
     
   }
 
