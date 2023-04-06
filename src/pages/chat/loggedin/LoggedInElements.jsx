@@ -4,7 +4,7 @@ import {Link as LinkS} from 'react-scroll'
 
 import cato from '../assets/cato.png'
 import cog from '../assets/settings.png'
-
+import bg from '../assets/chatbg2.png'
 
 const spin = keyframes`
 
@@ -177,8 +177,13 @@ export const Chat_Bg = styled.div`
   height: 651px;
   left: 54px;
   top: 16px;
+
+
   
-  background: #0B6292;
+  
+/*   background: #0B6292; */
+
+  background-image: url(${bg});
   border-radius: 10px;
 
 
@@ -236,14 +241,11 @@ export const Chat_Box = styled.div`
   top: 3px;
   margin-top: 9px;
   
-  background: #51EAFF;
+  background: rgba(81, 234, 255, 0.42);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
   border-radius: 10px;
-
-  box-shadow: 0px 0px 10px 5px #6e8291;
-
-  
-   
-
 
 
    
@@ -253,10 +255,54 @@ export const Chat_Box = styled.div`
 export const Chat_TextUser = styled.div`
 
 
-
+  position: absolute;
+  width: 108px;
+  height: 15px;
+  left: 15px;
+  top: 137px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+  
+  text-align: center;
+  
+  color: #000000;
 
    
 `
+
+export const Chat_ImgUser = styled.div`
+
+ position: absolute;
+ width: 108px;
+ height: 108px;
+  left:15px;
+  top: 14px;
+  
+`
+
+export const Chat_Text_Inner = styled.div`
+
+  position: absolute;
+  width: 529px;
+  height: 135px;
+  left: 146px;
+  top: 14px;
+  
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+
+  
+`
+
 
 
 
